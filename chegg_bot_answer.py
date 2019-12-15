@@ -4,9 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 
-# chrome_driver = './chromedriver_1.exe'  # set path to chromedriver
-chrome_options = Options()
-from webdriver_manager.chrome import ChromeDriverManager
+chrome_driver = r'C:\Program Files\webdriver\chromedriver_1.exe'  # set path to chromedriver
 # chrome_options.add_experimental_option('debuggerAddress','127.0.0.1:any-port-you-want') #set port
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -272,7 +270,7 @@ def signin():  # Only use this function if you are using new instances of your b
 
 
 if __name__ == '__main__':
-    browser = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=chrome_options)
+    browser = webdriver.Chrome(executable_path=chrome_driver, chrome_options=chrome_options)
     signin()
     client.run(bot_token)
     # test comment
