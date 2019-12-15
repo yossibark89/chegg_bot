@@ -4,8 +4,9 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 
-chrome_driver = 'C:/Users/jgao2/PycharmProjects/chegg_bot/chromedriver_1.exe'  # set path to chromedriver
+# chrome_driver = './chromedriver_1.exe'  # set path to chromedriver
 chrome_options = Options()
+from webdriver_manager.chrome import ChromeDriverManager
 # chrome_options.add_experimental_option('debuggerAddress','127.0.0.1:any-port-you-want') #set port
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -93,7 +94,7 @@ try:
 except FileExistsError:
     pass
 
-chrome_options.headless = True
+chrome_options.headless = False
 request_queue = []
 flag = False
 client = commands.Bot(command_prefix='!')
@@ -184,6 +185,7 @@ def take_screenshot(r_obj):
         f.write(png)
 
     request_queue.remove(r_obj)
+    time.sleep(5)
     browser.get('https://www.chegg.com')
     flag = False
     print('>>Saved screenshot')
@@ -255,8 +257,7 @@ def signin():  # Only use this function if you are using new instances of your b
     browser.find_element_by_name('login').click()
 
     try:
-        if WebDriverWait(browser, 5).until(
-                EC.presence_of_element_located((By.CLASS_NAME, "indicator error-msg-lg error password-error"))):
+        if WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[3]/div[2]/div[2]/div/div[3]/div/oc-component/div/div/div/div[2]/div[1]/div[1]/div/form/div/div/div/div/div[3]/span"))):
             print('redirecting back to login')
             browser.get('https://www.chegg.com/auth?action=login')
             handle_captcha()
@@ -265,13 +266,13 @@ def signin():  # Only use this function if you are using new instances of your b
     except TimeoutException:
         pass
 
-        if browser.find_element_by_tag_name('h1').text == 'Oops, we\'re sorry!':
-            return [0]
-        handle_captcha()
+    if browser.find_element_by_tag_name('h1').text == 'Oops, we\'re sorry!':
+        return [0]
+    handle_captcha()
 
 
 if __name__ == '__main__':
-    browser = webdriver.Chrome(executable_path=chrome_driver, chrome_options=chrome_options)
+    browser = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=chrome_options)
     signin()
     client.run(bot_token)
     # test comment
