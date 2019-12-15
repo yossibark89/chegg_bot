@@ -22,12 +22,15 @@ import json, base64
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-chrome_options = webdriver.ChromeOptions()
-chrome_driver = r'C:\Program Files\webdriver\chromedriver'  # set path to chromedriver
+chrome_bin = os.environ.get('GOOGLE_CHROME_SHIM', None)
+opts = webdriver.ChromeOptions()
+opts.binary_location = chrome_bin
 
-chrome_options.headless = True
-chrome_options.add_argument("--no sandbox")
-chrome_options.add_argument("--disable-gpu")
+#chrome_driver = r'C:\Program Files\webdriver\chromedriver'  # set path to chromedriver
+
+opts.headless = True
+opts.add_argument("--no sandbox")
+opts.add_argument("--disable-gpu")
 
 
 def chrome_takeFullScreenshot(driver):
@@ -274,7 +277,7 @@ def signin():  # Only use this function if you are using new instances of your b
 
 
 if __name__ == '__main__':
-    browser = webdriver.Chrome(executable_path=chrome_driver, options=chrome_options)
+    browser = webdriver.Chrome(executable_path="chromedriver", options=opts)
     signin()
     client.run(bot_token)
     # test comment
