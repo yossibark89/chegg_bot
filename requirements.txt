@@ -3,3 +3,4 @@ discord
 selenium
 requests
 bs4
+webdriver-manager
