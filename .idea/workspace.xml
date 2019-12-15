@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="18e289d9-10ad-4709-a2aa-1e4898deafbd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chegg_bot_answer.py" beforeDir="false" afterPath="$PROJECT_DIR$/chegg_bot_answer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1576420642281</updated>
       <workItem from="1576420646130" duration="6261000" />
-      <workItem from="1576426983428" duration="6911000" />
+      <workItem from="1576426983428" duration="8968000" />
     </task>
     <servers />
   </component>
@@ -109,24 +110,24 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1576437904649">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1576439868542">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1576437904649" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1576437904649">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1576439868542" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1576439868542">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1576437904649" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1576437904649">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1576439868542" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1576439868542">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1576437904649" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1576437904649">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1576439868542" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1576439868542">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576437904649" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576439868542" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/chegg_bot$chegg_bot_answer.coverage" NAME="chegg_bot_answer Coverage Results" MODIFIED="1576437904649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/chegg_bot$chegg_bot_answer.coverage" NAME="chegg_bot_answer Coverage Results" MODIFIED="1576439868536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

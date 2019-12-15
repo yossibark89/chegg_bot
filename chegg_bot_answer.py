@@ -2,10 +2,7 @@ import discord
 from discord.ext import commands
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.options import Options
 
-chrome_driver = 'C:/Program Files/webdriver/chromedriver.exe'  # set path to chromedriver
-chrome_options = Options()
 # chrome_options.add_experimental_option('debuggerAddress','127.0.0.1:any-port-you-want') #set port
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -24,6 +21,13 @@ import warnings
 import json, base64
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+chrome_options = webdriver.ChromeOptions()
+chrome_driver = 'C:/Program Files/webdriver/chromedriver.exe'  # set path to chromedriver
+
+chrome_options.headless = True
+chrome_options.add_argument("--no sandbox")
+chrome_options.add_argument("--disable-gpu")
 
 
 def chrome_takeFullScreenshot(driver):
@@ -93,7 +97,6 @@ try:
 except FileExistsError:
     pass
 
-chrome_options.headless = True
 request_queue = []
 flag = False
 client = commands.Bot(command_prefix='!')
@@ -271,7 +274,7 @@ def signin():  # Only use this function if you are using new instances of your b
 
 
 if __name__ == '__main__':
-    browser = webdriver.Chrome(executable_path=chrome_driver, chrome_options=chrome_options)
+    browser = webdriver.Chrome(executable_path=chrome_driver, options=chrome_options)
     signin()
     client.run(bot_token)
     # test comment
