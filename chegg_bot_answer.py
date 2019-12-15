@@ -3,9 +3,10 @@ from discord.ext import commands
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
-chrome_driver = "C:/Users/jgao2/PycharmProjects/chegg_bot/chromedriver.exe" #set path to chromedriver
-chrome_options= Options()
-#chrome_options.add_experimental_option('debuggerAddress','127.0.0.1:any-port-you-want') #set port
+
+chrome_driver = 'C:/Users/jgao2/PycharmProjects/chegg_bot/chromedriver.exe'  # set path to chromedriver
+chrome_options = Options()
+# chrome_options.add_experimental_option('debuggerAddress','127.0.0.1:any-port-you-want') #set port
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -25,31 +26,30 @@ import json, base64
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 
-def chrome_takeFullScreenshot(driver) :
+def chrome_takeFullScreenshot(driver):
+    def send(cmd, params):
+        resource = "/session/%s/chromium/send_command_and_get_result" % driver.session_id
+        url = driver.command_executor._url + resource
+        body = json.dumps({'cmd': cmd, 'params': params})
+        response = driver.command_executor._request('POST', url, body)
+        return response.get('value')
 
-  def send(cmd, params):
-    resource = "/session/%s/chromium/send_command_and_get_result" % driver.session_id
-    url = driver.command_executor._url + resource
-    body = json.dumps({'cmd':cmd, 'params': params})
-    response = driver.command_executor._request('POST', url, body)
-    return response.get('value')
+    def evaluate(script):
+        response = send('Runtime.evaluate', {'returnByValue': True, 'expression': script})
+        return response['result']['value']
 
-  def evaluate(script):
-    response = send('Runtime.evaluate', {'returnByValue': True, 'expression': script})
-    return response['result']['value']
+    metrics = evaluate( \
+        "({" + \
+        "width: Math.max(window.innerWidth, document.body.scrollWidth, document.documentElement.scrollWidth)|0," + \
+        "height: Math.max(innerHeight, document.body.scrollHeight, document.documentElement.scrollHeight)|0," + \
+        "deviceScaleFactor: window.devicePixelRatio || 1," + \
+        "mobile: typeof window.orientation !== 'undefined'" + \
+        "})")
+    send('Emulation.setDeviceMetricsOverride', metrics)
+    screenshot = send('Page.captureScreenshot', {'format': 'png', 'fromSurface': True})
+    send('Emulation.clearDeviceMetricsOverride', {})
 
-  metrics = evaluate( \
-    "({" + \
-      "width: Math.max(window.innerWidth, document.body.scrollWidth, document.documentElement.scrollWidth)|0," + \
-      "height: Math.max(innerHeight, document.body.scrollHeight, document.documentElement.scrollHeight)|0," + \
-      "deviceScaleFactor: window.devicePixelRatio || 1," + \
-      "mobile: typeof window.orientation !== 'undefined'" + \
-    "})")
-  send('Emulation.setDeviceMetricsOverride', metrics)
-  screenshot = send('Page.captureScreenshot', {'format': 'png', 'fromSurface': True})
-  send('Emulation.clearDeviceMetricsOverride', {})
-
-  return base64.b64decode(screenshot['data'])
+    return base64.b64decode(screenshot['data'])
 
 
 def virtual_click(browser, click_object, use_random=True):
@@ -234,7 +234,7 @@ def handle_captcha():  # This isn't really needed in remote debugging non headle
             time.sleep(random.uniform(3, 5))
 
 
-def signin():    #Only use this function if you are using new instances of your browser each time
+def signin():  # Only use this function if you are using new instances of your browser each time
     print('>>signing in!')
     browser.get('https://www.chegg.com/auth?action=login&redirect=https%3A%2F%2Fwww.chegg.com%2F')
     handle_captcha()
@@ -255,7 +255,8 @@ def signin():    #Only use this function if you are using new instances of your 
     browser.find_element_by_name('login').click()
 
     try:
-        if WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.CLASS_NAME, "indicator error-msg-lg error password-error"))):
+        if WebDriverWait(browser, 5).until(
+                EC.presence_of_element_located((By.CLASS_NAME, "indicator error-msg-lg error password-error"))):
             print('redirecting back to login')
             browser.get('https://www.chegg.com/auth?action=login')
             handle_captcha()
@@ -270,7 +271,7 @@ def signin():    #Only use this function if you are using new instances of your 
 
 
 if __name__ == '__main__':
-    browser = webdriver.Chrome(chrome_driver, chrome_options=chrome_options)
+    browser = webdriver.Chrome(executable_path=chrome_driver, chrome_options=chrome_options)
     signin()
     client.run(bot_token)
     # test comment
