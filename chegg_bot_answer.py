@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 
-chrome_driver = r'C:\Program Files\webdriver\chromedriver_1.exe'  # set path to chromedriver
+chrome_driver = 'C:/Program Files/webdriver/chromedriver.exe'  # set path to chromedriver
 chrome_options = Options()
 # chrome_options.add_experimental_option('debuggerAddress','127.0.0.1:any-port-you-want') #set port
 from selenium.webdriver.common.by import By
