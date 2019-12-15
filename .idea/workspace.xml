@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="18e289d9-10ad-4709-a2aa-1e4898deafbd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chegg_bot_answer.py" beforeDir="false" afterPath="$PROJECT_DIR$/chegg_bot_answer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +105,10 @@
       <option name="presentableId" value="Default" />
       <updated>1576420642281</updated>
       <workItem from="1576420646130" duration="6261000" />
-      <workItem from="1576426983428" duration="13060000" />
+      <workItem from="1576426983428" duration="13654000" />
+      <workItem from="1576446304214" duration="460000" />
+      <workItem from="1576446807233" duration="705000" />
+      <workItem from="1576450220912" duration="333000" />
     </task>
     <servers />
   </component>
@@ -115,24 +119,28 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1576443685708">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1576450555386">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1576443685708" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1576443685708">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1576450555386" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1576450555386">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1576443685708" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1576443685708">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1576450555386" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1576450555386">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1576443685708" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1576443685708">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1576450555386" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1576450555386">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576443685708" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1576450555386" />
+    <state x="623" y="225" key="search.everywhere.popup" timestamp="1576450197562">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1576450197562" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/chegg_bot$chegg_bot_answer.coverage" NAME="chegg_bot_answer Coverage Results" MODIFIED="1576443685700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/chegg_bot$chegg_bot_answer.coverage" NAME="chegg_bot_answer Coverage Results" MODIFIED="1576450555376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

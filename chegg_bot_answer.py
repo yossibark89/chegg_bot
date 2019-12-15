@@ -22,15 +22,17 @@ import json, base64
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
+PROXY = '138.197.162.125:8080'
 chrome_bin = os.environ.get('GOOGLE_CHROME_SHIM', None)
 opts = webdriver.ChromeOptions()
 opts.binary_location = chrome_bin
 
 #chrome_driver = r'C:\Program Files\webdriver\chromedriver'  # set path to chromedriver
 
-opts.headless = True
-opts.add_argument("--no sandbox")
-opts.add_argument("--disable-gpu")
+opts.headless = False
+opts.add_argument('--proxy-server=%s' % PROXY)
+# opts.add_argument("--no sandbox")
+# opts.add_argument("--disable-gpu")
 
 
 def chrome_takeFullScreenshot(driver):
@@ -105,7 +107,7 @@ flag = False
 client = commands.Bot(command_prefix='!')
 
 _2captcha_key = 'cb319d881ccd6998c30ae4a94c9cc666'
-bot_token = 'NjUxNzk4MDM0Mzc5NzAyMjgz.XfZMnA.WAUF5zqL2bmhtU3Tfqgp3VC4tCc'
+bot_token = 'NjUxNzk4MDM0Mzc5NzAyMjgz.XfarEA.KbHfalMvK13ZIiwaXeeW1lBK3sc'
 
 
 @client.event
