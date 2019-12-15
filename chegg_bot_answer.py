@@ -23,7 +23,7 @@ import json, base64
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 chrome_options = webdriver.ChromeOptions()
-chrome_driver = 'C:\Program Files\webdriver\chromedriver'  # set path to chromedriver
+chrome_driver = r'C:\Program Files\webdriver\chromedriver'  # set path to chromedriver
 
 chrome_options.headless = True
 chrome_options.add_argument("--no sandbox")
