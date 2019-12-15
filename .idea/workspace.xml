@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18e289d9-10ad-4709-a2aa-1e4898deafbd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chegg_bot_answer.py" beforeDir="false" afterPath="$PROJECT_DIR$/chegg_bot_answer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +107,7 @@
       <workItem from="1576426983428" duration="13654000" />
       <workItem from="1576446304214" duration="460000" />
       <workItem from="1576446807233" duration="705000" />
-      <workItem from="1576450220912" duration="333000" />
+      <workItem from="1576450220912" duration="782000" />
     </task>
     <servers />
   </component>

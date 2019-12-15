@@ -29,7 +29,7 @@ opts.binary_location = chrome_bin
 
 #chrome_driver = r'C:\Program Files\webdriver\chromedriver'  # set path to chromedriver
 
-opts.headless = False
+opts.headless = True
 opts.add_argument('--proxy-server=%s' % PROXY)
 # opts.add_argument("--no sandbox")
 # opts.add_argument("--disable-gpu")
