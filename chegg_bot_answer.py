@@ -3,7 +3,7 @@ from discord.ext import commands
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
-chrome_driver = "./chromedriver.exe" #set path to chromedriver
+chrome_driver = "chromedriver.exe" #set path to chromedriver
 chrome_options= Options()
 #chrome_options.add_experimental_option('debuggerAddress','127.0.0.1:any-port-you-want') #set port
 from selenium.webdriver.common.by import By
@@ -93,8 +93,7 @@ try:
 except FileExistsError:
     pass
 
-options = Options()
-options.headless = False
+chrome_options.headless = True
 request_queue = []
 flag = False
 client = commands.Bot(command_prefix='!')
@@ -222,7 +221,7 @@ def handle_captcha():  # This isn't really needed in remote debugging non headle
                 r = requests.get(f'https://2captcha.com/res.php?key={data_2cap["key"]}&action=get&id={id}')
                 status = r.text.split('|')[0]
                 i += 1
-                time.sleep(random.uniform(5, 7))
+                time.sleep(random.uniform(2, 4))
             token_g = r.text.split('|')[1]
             print(token_g)
             js1 = f'document.getElementById("g-recaptcha-response").innerHTML="{token_g}";'
