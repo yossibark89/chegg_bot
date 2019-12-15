@@ -4,3 +4,4 @@ selenium
 requests
 bs4
 webdriver-manager
+lxml
