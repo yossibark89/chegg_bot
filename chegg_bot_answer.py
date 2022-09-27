@@ -106,8 +106,8 @@ request_queue = []
 flag = False
 client = commands.Bot(command_prefix='!')
 
-_2captcha_key = 'cb319d881ccd6998c30ae4a94c9cc666'
-bot_token = 'NjUxNzk4MDM0Mzc5NzAyMjgz.XfarEA.KbHfalMvK13ZIiwaXeeW1lBK3sc'
+_2captcha_key = os.environ['2capToken'] #You should move your tokens to enviroment variables, so that they wont be visible on github.
+bot_token = os.environ['BotToken']      #If you don't, people may use these maliciously.
 
 
 @client.event
